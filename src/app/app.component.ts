@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ShopsService } from './shops.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'zomato';
+  constructor(private shopsService: ShopsService) {
+  }
+  get shopsData() {
+    return this.shopsService.shopData;
+  }
 }
